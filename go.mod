@@ -1,4 +1,4 @@
-module tempalte_module
+module template_module
 
 go 1.22.4
 

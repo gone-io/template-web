@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gone-io/gone"
-	"tempalte_module/internal"
+	"template_module/internal"
 )
 
 func main() {

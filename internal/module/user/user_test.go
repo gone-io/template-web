@@ -4,8 +4,8 @@ import (
 	"github.com/gone-io/gone"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
-	"tempalte_module/internal/interface/entity"
-	"tempalte_module/internal/interface/mock"
+	"template_module/internal/interface/entity"
+	"template_module/internal/interface/mock"
 	"testing"
 )
 

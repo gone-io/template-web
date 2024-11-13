@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"tempalte_module/internal/interface/entity"
-	"tempalte_module/internal/interface/service"
-	"tempalte_module/internal/pkg/utils"
+	"template_module/internal/interface/entity"
+	"template_module/internal/interface/service"
+	"template_module/internal/pkg/utils"
 
 	"github.com/gone-io/gone"
 	"github.com/gone-io/gone/goner/gin"

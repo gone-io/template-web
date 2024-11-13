@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gone-io/gone"
-	"tempalte_model/internal/interface/service"
-	"tempalte_model/internal/pkg/utils"
+	"tempalte_module/internal/interface/service"
+	"tempalte_module/internal/pkg/utils"
 )
 
 const IdAuthRouter = "router-auth"

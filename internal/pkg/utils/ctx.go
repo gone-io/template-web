@@ -3,7 +3,7 @@ package utils
 import (
 	"github.com/gone-io/gone"
 	"strings"
-	"tempalte_model/internal/pkg/e"
+	"tempalte_module/internal/pkg/e"
 )
 
 const UserIdKey = "user-id"

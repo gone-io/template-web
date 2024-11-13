@@ -1,4 +1,4 @@
-module tempalte_model
+module tempalte_module
 
 go 1.22.4
 

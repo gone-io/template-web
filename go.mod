@@ -1,4 +1,4 @@
-module web
+module tempalte_model
 
 go 1.22.4
 

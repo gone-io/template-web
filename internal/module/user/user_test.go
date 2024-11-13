@@ -4,9 +4,9 @@ import (
 	"github.com/gone-io/gone"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/mock/gomock"
+	"tempalte_model/internal/interface/entity"
+	"tempalte_model/internal/interface/mock"
 	"testing"
-	"web/internal/interface/entity"
-	"web/internal/interface/mock"
 )
 
 func Test_iUser_Register(t *testing.T) {

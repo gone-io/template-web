@@ -1,9 +1,8 @@
 package main
 
 import (
-	"web/internal"
-
 	"github.com/gone-io/gone"
+	"tempalte_model/internal"
 )
 
 func main() {

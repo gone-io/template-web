@@ -1,8 +1,8 @@
 package user
 
 import (
-	"web/internal/interface/entity"
-	"web/internal/interface/service"
+	"tempalte_model/internal/interface/entity"
+	"tempalte_model/internal/interface/service"
 
 	"github.com/gone-io/gone"
 )

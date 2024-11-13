@@ -1,6 +1,6 @@
 package service
 
-import "web/internal/interface/entity"
+import "tempalte_model/internal/interface/entity"
 
 type IUserLogin interface {
 	Register(registerParam *entity.RegisterParam) (*entity.LoginResult, error)

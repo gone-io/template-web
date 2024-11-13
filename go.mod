@@ -3,7 +3,7 @@ module template_module
 go 1.22.4
 
 require (
-	github.com/gone-io/gone v1.1.0-beta5
+	github.com/gone-io/gone v1.1.0
 	github.com/stretchr/testify v1.9.0
 	go.uber.org/mock v0.4.0
 )

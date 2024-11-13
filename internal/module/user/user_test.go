@@ -2,42 +2,36 @@ package user
 
 import (
 	"github.com/gone-io/gone"
-	"reflect"
+	"github.com/stretchr/testify/assert"
+	"go.uber.org/mock/gomock"
 	"testing"
-	"web/internal/interface/service"
+	"web/internal/interface/entity"
+	"web/internal/interface/mock"
 )
 
 func Test_iUser_Register(t *testing.T) {
-	type fields struct {
-		Flag gone.Flag
-		iDep service.IDependent
-	}
-	type args struct {
-		registerParam *entity.RegisterParam
-	}
-	tests := []struct {
-		name    string
-		fields  fields
-		args    args
-		want    *entity.LoginResult
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			s := &iUser{
-				Flag: tt.fields.Flag,
-				iDep: tt.fields.iDep,
-			}
-			got, err := s.Register(tt.args.registerParam)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("Register() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Register() got = %v, want %v", got, tt.want)
-			}
+	gone.RunTest(func(in struct {
+		iUser      *iUser               `gone:"*"` //inject iUser for test
+		iDependent *mock.MockIDependent `gone:"*"` //inject iDependent for mock
+	}) {
+		err := gone.ToError("err")
+		in.iDependent.EXPECT().DoSomething().Return(err)
+
+		register, err2 := in.iUser.Register(&entity.RegisterParam{
+			Username: "test",
+			Password: "test",
 		})
-	}
+		assert.Nil(t, register)
+		assert.Equal(t, err2, err)
+	}, func(cemetery gone.Cemetery) error {
+		controller := gomock.NewController(t)
+
+		//load all mocked components
+		mock.MockPriest(cemetery, controller)
+
+		//bury the tested component
+		cemetery.Bury(&iUser{})
+
+		return nil
+	})
 }

@@ -31,7 +31,6 @@ RUN sed 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' -i /etc/apk/repositories
 
 WORKDIR /app
 COPY config config
-COPY assert assert
 COPY --from=builder /app/bin/server /app/server
 
 ARG ENVIRONMENT=dev

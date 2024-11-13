@@ -2,15 +2,23 @@ package user
 
 import (
 	"web/internal/interface/entity"
+	"web/internal/interface/service"
 
 	"github.com/gone-io/gone"
 )
 
 type iUser struct {
 	gone.Flag
+
+	iDep service.IDependent `gone:"*"`
 }
 
 func (s *iUser) Register(registerParam *entity.RegisterParam) (*entity.LoginResult, error) {
+	err := s.iDep.DoSomething()
+	if err != nil {
+		return nil, gone.ToError(err)
+	}
+
 	return &entity.LoginResult{
 		Token: "token",
 		User: &entity.User{

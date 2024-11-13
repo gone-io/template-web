@@ -1,7 +1,7 @@
 services:
   api:
-    image: registry.cn-qingdao.aliyuncs.com/initium/panda-park:${ENVIRONMENT}
-    platform: linux/amd64
+    image: web-server
+#    platform: linux/amd64
     restart: on-failure
     build:
       context: .
@@ -14,15 +14,3 @@ services:
       timeout: 3s
       retries: 3
       start_period: 20s
-
-  proxy:
-    image: caddy
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./data/frontend/www:/usr/src/dist
-      - ./data/log:/data/log
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./ssl:/data/caddy/certificates

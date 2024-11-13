@@ -16,6 +16,6 @@ type LoginResult struct {
 }
 
 type RegisterParam struct {
-	UserName string `json:"username"`
+	Username string `json:"username"`
 	Password string `json:"password"`
 }

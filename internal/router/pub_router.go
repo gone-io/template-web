@@ -4,11 +4,6 @@ import "github.com/gone-io/gone"
 
 const IdRouterPub = "router-pub"
 
-//go:gone
-func NewPubRouter() (gone.Goner, gone.GonerId) {
-	return &pubRouter{}, IdRouterPub
-}
-
 type pubRouter struct {
 	gone.Flag
 	gone.IRouter
